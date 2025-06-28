@@ -1,4 +1,6 @@
-# Pipeline to use NP Classifier API
+# Please cite [paper] or this GitHub repo (gitHub.com/s-kotwal/)
+
+# Pipeline to use NP Classifier API (https://npclassifier.ucsd.edu/)
 # Filters out rows where Superclass is NA
 
 
@@ -9,8 +11,8 @@ library(readr)
 library(dplyr)
 
 # Input and output file paths
-input_file <- "/Users/shashi/Desktop/BX_Final_Screen/pos_neg_ar_final.csv"
-output_file <- "/Users/shashi/Desktop/BX_Final_Screen/test_pos_neg_ar_final_NPclassified.csv"
+input_file <- "/npclassifier_list.csv"
+output_file <- "/npclassifier_list_complete.csv"
 
 # Load the CSV
 df <- read_csv(input_file)
@@ -85,4 +87,7 @@ df_ordered <- df_filtered[, reordered_cols]
 
 # Save output
 write_csv(df_ordered, output_file)
-cat("✅ Successfully saved:", output_file, "\n")
+cat("Successfully saved:", output_file, "\n")
+
+
+# Kim HW, Wang M, Leber CA, Nothias LF, Reher R, Kang KB, van der Hooft JJJ, Dorrestein PC, Gerwick WH, Cottrell GW. NPClassifier: A Deep Neural Network-Based Structural Classification Tool for Natural Products. J Nat Prod. 2021 Oct 18. doi: 10.1021/acs.jnatprod.1c00399. Epub ahead of print. PMID: 34662515.
